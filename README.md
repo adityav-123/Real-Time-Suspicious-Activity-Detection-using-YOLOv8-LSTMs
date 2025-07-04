@@ -3,7 +3,6 @@
 A deep learning project that identifies and classifies **suspicious behaviors like shoplifting** from video streams in **real-time**.
 This system moves beyond simple classification by **tracking individuals** and analyzing their **actions over time**.
 
-
 ---
 
 ## 🚀 Project Overview
@@ -38,15 +37,6 @@ The system:
 ---
 
 ## 📂 Project Structure
-
-```bash
-anti_shoplift_system/
-├── concealing/         # Clips of people concealing items
-├── loitering/          # Clips of people loitering
-├── normal/             # Clips of normal behavior
-├── normal_walk/        # Source videos of normal walking
-├── shoplifting/        # Source videos of shoplifting
-```
 
 ```bash
 . (root directory)
@@ -99,24 +89,13 @@ pip install -r requirements.txt
 
 ### 🎮 Step 3: Prepare the Data
 
-This project requires a **specific dataset structure** to function properly.
+Download the dataset from Kaggle:
+🔗 [Shoplifting Video Dataset on Kaggle](https://www.kaggle.com/datasets/kipshidze/shoplifting-video-dataset)
 
-#### 📂 Source Videos
+After downloading:
 
-Place your full-length videos in:
-
-* `shoplifting/`
-* `normal_walk/`
-
-#### ✂️ Action Clips
-
-Use **FFmpeg** to extract short video clips from your source videos.
-
-Save these clips in:
-
-* `concealing/`
-* `loitering/`
-* `normal/`
+* Extract full-length videos from the dataset.
+* Use FFmpeg to extract short video clips of individual actions.
 
 #### 💡 Example FFmpeg Command:
 
@@ -173,8 +152,7 @@ The system operates in **four major stages**:
 
 ### 🎬 Stage 2: Data Curation
 
-* Review raw videos from `shoplifting/` and `normal_walk/`.
-* Extract labeled clips using FFmpeg:
+* Review source videos and extract labeled clips using FFmpeg:
 
   * `concealing/`, `loitering/`, and `normal/`
 
